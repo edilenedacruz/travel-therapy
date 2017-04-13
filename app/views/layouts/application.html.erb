@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>TravelTherapy</title>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Cabin+Sketch|Fredericka+the+Great|Lobster+Two|Love+Ya+Like+A+Sister|Pacifico|Playball|Sansita|Satisfy|Sofia|Spirax" rel="stylesheet">
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
@@ -11,6 +12,9 @@
 
   <body>
     <%= render partial: "shared/navbar" %>
+    <% flash.each do |type, msg| %>
+      <%= content_tag :div, sanitize(msg), class: type %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -2,10 +2,14 @@
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">Travel Therapy</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if current_user %>
+          <li><%= link_to "Logout", logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign In", login_path %></li>
+        <% end %>
+        <li><a href="badges.html"></a></li>
+        <li><a href="collapsible.html"></a></li>
       </ul>
     </div>
   </nav>

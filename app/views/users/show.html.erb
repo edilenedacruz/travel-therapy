@@ -1,0 +1,23 @@
+<div class="container">
+<div class="col s12 m7">
+  <h2 class="header">Dashboard</h2>
+  <div class="card horizontal">
+    <div class="card-image">
+      <%= image_tag @user.avatar %>
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p><%= @user.first_name %></p>
+        <p><%= @user.last_name %></p>
+        <p><%= @user.username %></p>
+        <p><%= @user.email %></p>
+        <p><%= @user.city %></p>
+        <p><%= @user.state %></p>
+      </div>
+      <div class="card-action">
+        <%= link_to "Edit your profile", username_edit_path(slug: @user.slug) %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

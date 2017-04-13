@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="card form-card">
+    <div class="card-content">
+      <span class="card-title black-text">Update Your Account</span>
+      <div class="form">
+        <%= form_for @user, url: username_path do |f| %>
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name %>
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name %>
+          <%= f.label :username %>
+          <%= f.text_field :username %>
+          <%= f.label :avatar, "Profile photo url" %>
+          <%= f.text_field :avatar %>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <%= f.label :city %>
+          <%= f.text_field :city %>
+          <%= f.label :state %>
+          <%= f.text_field :state %>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+          <%= f.submit "Update", class: "btn btn-color"  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

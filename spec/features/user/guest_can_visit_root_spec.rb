@@ -6,5 +6,6 @@ RSpec.describe "As a guest" do
     visit '/'
 
     expect(page).to have_content("Travel Therapy")
+    expect(page).to have_link("Sign In")
   end
 end
