@@ -33,6 +33,7 @@ gem 'figaro'
 gem 'faraday'
 gem 'faker'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'materialize-sass'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
