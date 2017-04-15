@@ -23,5 +23,6 @@
       <%= content_tag :div, sanitize(msg), class: type %>
     <% end %>
     <%= yield %>
+    <%= render partial: "shared/footer" %>
   </body>
 </html>

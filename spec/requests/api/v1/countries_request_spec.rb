@@ -26,7 +26,7 @@ RSpec.describe "Countries API" do
   end
 
   it "creates a record" do
-    country_params = { country_id: "1234", country: "Brazil", latitude: "87.30961655026263", longitude: "154.96619654464786", city: "Fernando de Noronha"}
+    country_params = { city_id: "1234", country: "Brazil", latitude: "87.30961655026263", longitude: "154.96619654464786", city: "Fernando de Noronha"}
 
     post '/api/v1/countries', params: { country: country_params }
 

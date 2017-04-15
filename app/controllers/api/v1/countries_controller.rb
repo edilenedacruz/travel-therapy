@@ -22,6 +22,6 @@ class Api::V1::CountriesController < ApplicationController
   private
 
   def country_params
-    params.require(:country).permit(:country_id, :country, :latitude, :longitude, :city)
+    params.require(:country).permit(:city_id, :country, :latitude, :longitude, :city)
   end
 end

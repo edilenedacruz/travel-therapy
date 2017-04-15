@@ -1,5 +1,5 @@
 Fabricator(:country) do
-  country_id Faker::Number.number(4)
+  city_id Faker::Number.number(4)
   country    Faker::Address.country
   city       Faker::Address.city
   latitude   Faker::Address.latitude
