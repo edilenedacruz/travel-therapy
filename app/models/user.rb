@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   before_validation :generate_slug
 
+  has_many :trips
+
   private
 
   def generate_slug
