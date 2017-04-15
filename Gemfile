@@ -32,7 +32,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'faraday'
 gem 'faker'
-gem 'pry'
 
 
 # Use Capistrano for deployment
