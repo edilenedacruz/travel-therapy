@@ -6,14 +6,14 @@ RSpec.describe NumbeoService do
     @numbeo = NumbeoService.new
   end
 
-  it "can get access cities info" do
+  xit "can get access cities info" do
 
     populate = @numbeo.get_all_cities_info
 
     expect(populate.count).to eq(2914)
   end
 
-  it "can get current prices in a city" do
+  xit "can get current prices in a city" do
 
     city = "Denver"
 
