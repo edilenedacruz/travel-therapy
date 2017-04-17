@@ -2,6 +2,6 @@
 
 <h1>trip show</h1>
 
-<%= @trip.city %>
-<%= @trip.departure_date %>
-<%= @trip.return_date %>
+<p>Destination: <%= @trip.city %></p>
+<p>Departure date:<%= (@trip.departure_date).strftime("%B %C, %G") %></p>
+<p>Return date: <%= (@trip.return_date).strftime("%B %C, %G") %></p>

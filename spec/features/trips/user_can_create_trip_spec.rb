@@ -24,9 +24,9 @@ RSpec.feature "Trip planner" do
     fill_in "trip[return_date]", with: "05/01/2017"
     fill_in "trip[city]", with: "Sedona,AZ"
     click_button "Begin your adventure"
-    save_and_open_page
+
     expect(page).to have_content("Departure date")
     expect(page).to have_content("Return date")
-    expect(page).to have_content("Departure date")
+    expect(page).to have_content("Destination")
   end
 end
