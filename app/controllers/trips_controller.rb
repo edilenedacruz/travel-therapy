@@ -18,6 +18,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    # @prices = Price.get_prices(@trip.city)
   end
 
   private
