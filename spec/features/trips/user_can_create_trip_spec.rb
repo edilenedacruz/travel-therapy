@@ -27,6 +27,6 @@ RSpec.feature "Trip planner" do
 
     expect(page).to have_content("Departure date")
     expect(page).to have_content("Return date")
-    expect(page).to have_content("Where would you like to go?")
+    expect(page).to have_content("Destination")
   end
 end
