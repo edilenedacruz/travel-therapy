@@ -21,8 +21,6 @@ RSpec.feature "Guest can visit sign in page" do
     expect(page).to have_content("Username")
     expect(page).to have_content("Profile photo url")
     expect(page).to have_content("Email")
-    expect(page).to have_content("City")
-    expect(page).to have_content("State")
     expect(page).to have_content("Password")
     expect(page).to have_content("Password confirmation")
     expect(page).to have_button("Create your account")
