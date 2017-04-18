@@ -4,6 +4,10 @@ body {
   flex-direction: column;
 }
 
+#logo {
+  font-family: 'Pacifico', cursive;
+}
+
 main {
   flex: 1 0 auto;
 }
@@ -27,6 +31,10 @@ main {
 #love {
   text-align: center;
   color: red;
+}
+
+#foot-quote {
+  font-weight: 100px;
 }
 // font-family: 'Satisfy', cursive;
 // font-family: 'Playball', cursive;
