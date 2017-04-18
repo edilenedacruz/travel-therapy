@@ -32,7 +32,7 @@
 
     <% if @user.trips.nil? == false %>
       <h5 class="header center-align">View your trips</h5>
-      <table class="bordered centered highlight">
+      <table class="bordered centered highlight trips-table">
         <thead>
           <tr>
             <th>Destination</th>
@@ -49,11 +49,16 @@
             <td><%= trip.departure_date %></td>
             <td><%= trip.return_date %></td>
             <td><%= link_to "Edit", edit_trip_path(trip) %></td>
-            <td><%= link_to "Delete", trip_path(trip), method: :destroy %></td>
+            <td><%= link_to "Delete", trip_path(trip), method: :delete %></td>
           </tr>
           <% end %>
         </tbody>
       </table>
+      <% else %>
+      <div class="too-short">
+        <h6>Live is too short!!! Go do something!</h6>
+      </div>
+      <%= link_to "Plan an adventure", new_trip_path, class: "btn btn-color" %>
       <% end %>
     </div>
     <div class="section"></div>

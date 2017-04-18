@@ -12,7 +12,7 @@
       </div>
       <div class="row">
         <div class="col s12">
-            Where would you like to go?
+            Changed your mind to where?
           <div class="input-field inline">
             <input type="text" name="trip[city]">
             <label for="email" data-error="wrong" data-success="right">City name, State</label>
@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="center-align">
-        <%= f.submit "Begin your adventure", class: "btn btn-color", method: :create %>
+        <%= f.submit "Update trip", class: "btn btn-color", method: :update %>
       </div>
       <% end %>
     </form>
