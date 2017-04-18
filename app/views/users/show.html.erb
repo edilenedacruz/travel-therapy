@@ -1,18 +1,21 @@
 <div class="container">
   <div class="col s12 m7">
-    <h2 class="header">Dashboard</h2>
+    <div class="section">
+    </div>
+    <h5 class="header center-align"> <%= @user.first_name %>'s Dream Vacations Planning Center</h5>
+    <div class="section">
+    </div>
     <div class="card horizontal">
       <div class="card-image">
         <%= image_tag @user.avatar %>
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p><%= @user.first_name %></p>
-          <p><%= @user.last_name %></p>
-          <p><%= @user.username %></p>
-          <p><%= @user.email %></p>
-          <p><%= @user.city %></p>
-          <p><%= @user.state %></p>
+          <ul>
+          <li>First name: <%= @user.first_name %></li>
+          <li>Last name: <%= @user.last_name %></li>
+          <li>Username: <%= @user.username %></li>
+          </ul>
         </div>
         <div class="card-action">
           <%= link_to "Edit your profile", username_edit_path(slug: @user.slug) %>
@@ -20,24 +23,9 @@
       </div>
     </div>
   </div>
-  <div class="">
+  <div class="center-align">
     <%= link_to "Plan an adventure", new_trip_path, class: "btn btn-color" %>
   </div>
-
-  <div class="row">
-
-  <div class="card">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="images/office.jpg">
+    <div class="section">
     </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-      <p><a href="#">This is a link</a></p>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-    </div>
-  </div>
-</div>
 </div>

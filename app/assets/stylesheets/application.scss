@@ -1,4 +1,48 @@
 @import "materialize/components/color";
-$primary-color: color("blue", "lighten-2") !default;
-$secondary-color: color("pink", "base") !default;
+$primary-color: color("light-blue", "darken-4") !default;
+$secondary-color: color("light-blue", "darken-2") !default;
 @import 'materialize';
+
+html {
+  font-family: Playfair Display, Pacifico, sans-serif;
+}
+
+#logo {
+  font-family: 'Pacifico', cursive;
+}
+
+#love {
+  text-align: center;
+  color: red;
+}
+
+#foot-quote {
+  text-size: 300px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+
+main {
+  flex: 1 0 auto;
+}
+
+.navbar-fixes {
+  background-color: $primary-color;
+}
+
+.nav-wrapper {
+  background-color: $primary-color;
+}
+
+.page-footer{
+  background-color: $primary-color;
+}
+
+.btn {
+  background-color: $primary-color;
+}
