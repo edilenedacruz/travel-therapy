@@ -15,8 +15,6 @@ Rails.application.routes.draw do
   get '/username/edit', path: ':username/edit', to: 'users#edit'
   patch '/username/update', path: ':username', to: 'users#update'
 
-
-
   resources :trips
 
   namespace :api do

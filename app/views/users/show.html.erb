@@ -28,4 +28,30 @@
   </div>
     <div class="section">
     </div>
+    <div class="">
+
+    <% if @user.trips.nil? == false %>
+      <h5 class="header center-align">View your trips</h5>
+      <table class="bordered centered highlight">
+        <thead>
+          <tr>
+            <th>Destination</th>
+            <th>Departure date</th>
+            <th>Return date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% current_user.trips.each do |trip| %>
+            <td><%= trip.city %></td>
+            <td><%= trip.departure_date %></td>
+            <td><%= trip.return_date %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+    <div class="section"></div>
+    <div class="section"></div>
 </div>

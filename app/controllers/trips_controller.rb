@@ -1,11 +1,12 @@
 class TripsController < ApplicationController
   def new
+    @user = current_user
     @trip = Trip.new
   end
 
   def create
     @user = current_user
-    @trip = Trip.new(trip_params)
+    @trip = @user.trips.create(trip_params)
     if @trip.save
       flash[:success] = "Your trip has been created!"
       redirect_to trip_path(@trip)
