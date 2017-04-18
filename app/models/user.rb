@@ -19,7 +19,6 @@ class User < ApplicationRecord
     user.last_name = auth_hash['info']['last_name']
     user.avatar = auth_hash['info']['image']
     user.oauth_token = auth_hash["credentials"]["token"]
-    user.oauth_expires_at = auth_hash["credentials"]["expires_at"]
     user.password = auth_hash["info"]["name"]
     user.username = auth_hash["info"]["first_name"]
     user.save!
