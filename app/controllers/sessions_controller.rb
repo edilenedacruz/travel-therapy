@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   def create_facebook
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
+    flash[:success] = "You are now logged in."
     redirect_to "/#{user.slug}"
   end
 
@@ -13,6 +14,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:session][:username])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
+      flash[:success] = "You are now logged in."
       redirect_to "/#{@user.slug}"
     else
       flash[:error] = @user.errors.full_messages.to_sentence
@@ -22,7 +24,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
-    flash[:notice] = "You have successfully logged out."
+    flash[:notice] = "You are now logged out."
     redirect_to root_path
   end
 

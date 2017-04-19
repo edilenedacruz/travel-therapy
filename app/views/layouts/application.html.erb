@@ -18,10 +18,9 @@
   </head>
 
   <body>
+    <%= render 'toastr_rails/flash' %>
     <%= render partial: "shared/navbar" %>
-    <% flash.each do |type, msg| %>
-      <%= content_tag :div, sanitize(msg), class: type %>
-    <% end %>
+
     <%= yield %>
     <%= render partial: "shared/footer" %>
   </body>

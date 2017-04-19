@@ -36,6 +36,8 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'materialize-sass'
 gem 'omniauth-facebook', '~> 4.0'
 
+gem 'toastr_rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

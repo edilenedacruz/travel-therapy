@@ -14,6 +14,7 @@
 //= require materialize-sprockets
 //= require materialize
 //= require jquery_ujs
+//= require toastr_rails
 //= require_tree .
 
 $('.carousel.carousel-slider').carousel({fullWidth: true});
@@ -21,4 +22,19 @@ $('.carousel.carousel-slider').carousel({fullWidth: true});
 $(document).ready(function(){
   $('.slider').slider();
 });
-    
+
+
+toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "progressBar": true,
+  "positionClass": "toast-top-center",
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+};
