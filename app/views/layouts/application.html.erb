@@ -12,12 +12,25 @@
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+
+  <!--Installation using bower. Preferred!!! -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css"/>
+  <link rel="stylesheet" href="bower_components/lobilist/dist/lobilist.min.css"/>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+    <!--Installation using bower. Preferred!!! -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/jquery-ui-touch-punch-improved/jquery.ui.touch-punch-improved.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/lobilist/dist/lobilist.min.js"></script>
+
     <%= render 'toastr_rails/flash' %>
     <%= render partial: "shared/navbar" %>
 

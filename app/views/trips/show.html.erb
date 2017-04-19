@@ -1,5 +1,18 @@
-<h1>trip show</h1>
-
-<p>Destination: <%= @trip.city %></p>
-<p>Departure date:<%= @trip.departure_date %></p>
-<p>Return date: <%= @trip.return_date %></p>
+<div class="container">
+  <div class="row">
+      <div class="col s12">
+        <h5 class="header center-align">Details for trip to <%=@trip.city %></h5>
+      </div>
+      <div class="col s6">
+        <p>Departure date: <%= @trip.departure_date %></p>
+        <p>Return date: <%= @trip.return_date %></p>
+      </div>
+      <div class="col s6 center-align">
+        <h6 class="header center-align" >Activities</h6>
+          <% @trip.todos.map do |activity| %>
+          <%= activity.title %>
+        <% end %>
+      </div>
+      <%= link_to "Add an activity", new_trip_todo_path(@trip) %>
+  </div>
+</div>
