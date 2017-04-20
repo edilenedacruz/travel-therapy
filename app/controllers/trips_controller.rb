@@ -19,7 +19,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
-    @prices = Price.get_prices(@trip.city)
+    # @prices = Price.get_prices(@trip.city)
   end
 
   def edit
@@ -27,6 +27,7 @@ class TripsController < ApplicationController
   end
 
   def update
+    @user = current_user
     @trip = Trip.find(params[:id])
     if @trip.update(trip_params)
       flash[:success] = "Your trip has been updated."
@@ -47,6 +48,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:city, :departure_date, :return_date).merge(user_id: current_user)
+    params.require(:trip).permit(:city, :departure_date, :return_date).merge(user_id: current_user.id)
   end
 end
