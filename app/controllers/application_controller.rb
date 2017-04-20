@@ -1,23 +1,18 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user
+  helper_method :current_user, :authorize!
 
   # before_action :authorize!
-
-  add_flash_types :success, :info, :warning, :danger
 
   def current_user
     @user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   # def authorize!
-  #   unless authorized?
-  #     redirect_to root_url, danger: "You are not authorized to visit this page!"
+  #   unless current_user
+  #     flash[:danger] = "You are not authorized to visit this page!"
+  #     redirect_to root_path
   #   end
-  # end
-  #
-  # def authorized?
-  #
   # end
 
 end

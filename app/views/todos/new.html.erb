@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <form class="col s12">
+    <%= form_for [@trip, @todo] do |f| %>
+      <div class="input-field col s6 center-align">
+        Activity
+        <input type="text" name="todo[title]">
+      </div><br>
+      <div class="center-align">
+        <%= f.submit "Add activity", class: "btn btn-color", method: :create %>
+      </div>
+      <% end %>
+    </form>
+  </div>
+  <div class="section">
+  </div>
+</div>

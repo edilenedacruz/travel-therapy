@@ -45,7 +45,7 @@
         <tbody>
           <tr>
             <% current_user.trips.each do |trip| %>
-            <td><%= trip.city %></td>
+            <td><a href="/trips/<%= trip.id %>"><%=  trip.city %></a></td>
             <td><%= trip.departure_date %></td>
             <td><%= trip.return_date %></td>
             <td><%= link_to "Edit", edit_trip_path(trip) %></td>
