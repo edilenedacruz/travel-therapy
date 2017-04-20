@@ -35,6 +35,7 @@ gem 'faker'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'materialize-sass'
 gem 'omniauth-facebook', '~> 4.0'
+gem 'simplecov', :require => false, :group => :test
 
 gem 'toastr_rails'
 

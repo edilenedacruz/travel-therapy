@@ -7,7 +7,7 @@
         <input type="text" name="todo[title]">
       </div><br>
       <div class="center-align">
-        <%= f.submit "Add activity", class: "btn btn-color" %>
+        <%= f.submit "Add activity", class: "btn btn-color", method: :create %>
       </div>
       <% end %>
     </form>
@@ -15,14 +15,3 @@
   <div class="section">
   </div>
 </div>
-
-
-
-<div class="lobilist-demo"></div>
-<script>
-   $(function(){
-        $('#lobilist-demo').lobiList({
-          addList(list)
-        });
-    });
-</script>

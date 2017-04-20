@@ -1,7 +1,8 @@
 class TodosController < ApplicationController
+
   def new
     @trip = Trip.find(params[:trip_id])
-    @todo = Todo.new
+    @todo = Todo.new()
   end
 
 

@@ -1,14 +1,14 @@
 class TripsController < ApplicationController
+
   def new
     @user = current_user
     @trip = Trip.new
   end
 
   def create
-    user = current_user
-    @trip = Trip.create(trip_params)
+    @user = current_user
+    @trip = @user.trips.create(trip_params)
     if @trip.save
-      user.trips << @trip
       flash.now[:success] = "Your trip has been created!"
       redirect_to trip_path(@trip)
     else
@@ -47,6 +47,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:city, :departure_date, :return_date)
+    params.require(:trip).permit(:city, :departure_date, :return_date).merge(user_id: current_user)
   end
 end
