@@ -34,7 +34,9 @@ gem 'faraday'
 gem 'faker'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'materialize-sass'
-gem 'omniauth-facebook', '~> 4.0'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
 gem 'simplecov', :require => false, :group => :test
 
 gem 'toastr_rails'

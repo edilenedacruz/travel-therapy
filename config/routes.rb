@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-    get 'auth/:provider/callback', to: 'sessions#create_facebook'
+    get 'auth/facebook/callback', to: 'sessions#create_facebook'
     get 'auth/failure', to: redirect('/')
-    delete 'signout', to: 'sessions#destroy', as: 'signout'
 
   get '/login', to: 'sessions#new', as: "login"
   post '/login', to: 'sessions#create'
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
   patch '/username/update', path: ':username', to: 'users#update'
 
   resources :trips do
-    resources :todos 
+    resources :todos
   end
 
   namespace :api do
