@@ -12,7 +12,7 @@ class NumbeoService
 
 
   def get_current_prices(city)
-    parse(connection.get("city_prices?api_key=#{@key}&query=#{city}"))
+    parse(connection.get("city_prices?api_key=#{@key}&query=#{city}"))["prices"]
   end
 
   private

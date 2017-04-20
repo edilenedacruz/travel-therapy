@@ -16,3 +16,10 @@
       <%= link_to "Add an activity", new_trip_todo_path(@trip) %>
   </div>
 </div>
+
+
+<% @prices.each do |item| %>
+  <%= item.name %>
+  <%= item.prices %>
+  <hr>
+<% end %>

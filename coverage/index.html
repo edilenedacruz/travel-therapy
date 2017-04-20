@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-20T10:28:37-06:00">2017-04-20T10:28:37-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-20T11:39:29-06:00">2017-04-20T11:39:29-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">92.99%</span></span>
+    (<span class="covered_percent"><span class="green">90.89%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.71
+         1.69
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>52</b> files in total.
-    <b>528</b> relevant lines. 
-    <span class="green"><b>491</b> lines covered</span> and
-    <span class="red"><b>37</b> lines missed </span>
+    <b>527</b> relevant lines. 
+    <span class="green"><b>479</b> lines covered</span> and
+    <span class="red"><b>48</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -102,12 +102,12 @@
       
       <tr>
         <td class="strong"><a href="#211bf9dbbcb9b4f7decc4e2c1ad58d60e5d5d014" class="src_link" title="app/controllers/trips_controller.rb">app/controllers/trips_controller.rb</a></td>
-        <td class="yellow strong">84.38 %</td>
-        <td>53</td>
-        <td>32</td>
-        <td>27</td>
-        <td>5</td>
-        <td>1.3</td>
+        <td class="red strong">70.97 %</td>
+        <td>52</td>
+        <td>31</td>
+        <td>22</td>
+        <td>9</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -432,12 +432,12 @@
       
       <tr>
         <td class="strong"><a href="#e993c5d3530a429d7e97b9d0a89baccabae5952b" class="src_link" title="spec/features/trips/user_can_create_trip_spec.rb">spec/features/trips/user_can_create_trip_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="red strong">66.67 %</td>
         <td>32</td>
         <td>18</td>
-        <td>18</td>
-        <td>0</td>
-        <td>1.1</td>
+        <td>12</td>
+        <td>6</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -452,12 +452,12 @@
       
       <tr>
         <td class="strong"><a href="#71bb04a66fb101a8c0e4a864c693ddf4c8e2245f" class="src_link" title="spec/features/trips/user_can_edit_trip_spec.rb">spec/features/trips/user_can_edit_trip_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="green strong">95.65 %</td>
         <td>38</td>
         <td>23</td>
-        <td>23</td>
-        <td>0</td>
-        <td>1.2</td>
+        <td>22</td>
+        <td>1</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -1321,11 +1321,11 @@
         <div class="source_table" id="211bf9dbbcb9b4f7decc4e2c1ad58d60e5d5d014">
   <div class="header">
     <h3>app/controllers/trips_controller.rb</h3>
-    <h4><span class="yellow">84.38 %</span> covered</h4>
+    <h4><span class="red">70.97 %</span> covered</h4>
     <div>
-      <b>32</b> relevant lines. 
-      <span class="green"><b>27</b> lines covered</span> and
-      <span class="red"><b>5</b> lines missed.</span>
+      <b>31</b> relevant lines. 
+      <span class="green"><b>22</b> lines covered</span> and
+      <span class="red"><b>9</b> lines missed.</span>
     </div>
   </div>
   
@@ -1359,7 +1359,7 @@
         <li class="covered" data-hits="6" data-linenumber="5">
           <span class="hits">6</span>
           
-          <code class="ruby">    @trip = Trip.new()</code>
+          <code class="ruby">    @trip = Trip.new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -1380,20 +1380,20 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="9">
           
-          <code class="ruby">    user = current_user</code>
+          
+          <code class="ruby">    @user = current_user</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="10">
           
-          <code class="ruby">    @trip = Trip.create(trip_params)</code>
+          
+          <code class="ruby">    @trip = @user.trips.create(trip_params)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
           
           <code class="ruby">    if @trip.save</code>
         </li>
@@ -1401,250 +1401,244 @@
         <li class="missed" data-hits="0" data-linenumber="12">
           
           
-          <code class="ruby">      user.trips &lt;&lt; @trip</code>
+          <code class="ruby">      flash.now[:success] = &quot;Your trip has been created!&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="13">
           
           
-          <code class="ruby">      flash.now[:success] = &quot;Your trip has been created!&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
-          
           <code class="ruby">      redirect_to trip_path(@trip)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
           
           <code class="ruby">      flash.now[:error] = @trip.errors.full_messages.to_sentence</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
           
           <code class="ruby">      render :new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="22">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="4" data-linenumber="21">
+          <span class="hits">4</span>
           
           <code class="ruby">    @trip = Trip.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">    # @prices = Price.get_prices(@trip.city)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
           <code class="ruby">  def edit</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="27">
+        <li class="covered" data-hits="2" data-linenumber="26">
           <span class="hits">2</span>
           
           <code class="ruby">    @trip = Trip.find(params[:id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
           <code class="ruby">  def update</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
           <code class="ruby">    @trip = Trip.find(params[:id])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
           <code class="ruby">    if @trip.update(trip_params)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="32">
+          
           
           <code class="ruby">      flash[:success] = &quot;Your trip has been updated.&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="33">
+          
           
           <code class="ruby">      redirect_to trip_path(@trip)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
           
           <code class="ruby">      flash[:danger] = &quot;Your trip was not updated.&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="37">
-          
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
           <code class="ruby">      render :edit</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
           <code class="ruby">    @user = current_user</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
           <code class="ruby">    @trip = Trip.find(params[:id])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
           <code class="ruby">    @trip.destroy</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
           <code class="ruby">    redirect_to &quot;/#{@user.slug}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="50">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
           <code class="ruby">  def trip_params</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="51">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
           
-          <code class="ruby">    params.require(:trip).permit(:city, :departure_date, :return_date)</code>
+          <code class="ruby">    params.require(:trip).permit(:city, :departure_date, :return_date).merge(user_id: current_user)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby">end</code>
@@ -4645,11 +4639,11 @@
         <div class="source_table" id="e993c5d3530a429d7e97b9d0a89baccabae5952b">
   <div class="header">
     <h3>spec/features/trips/user_can_create_trip_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">66.67 %</span> covered</h4>
     <div>
       <b>18</b> relevant lines. 
-      <span class="green"><b>18</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>6</b> lines missed.</span>
     </div>
   </div>
   
@@ -4794,20 +4788,20 @@
           <code class="ruby">    fill_in &quot;trip[departure_date]&quot;, with: &quot;05/01/2017&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="24">
+          
           
           <code class="ruby">    fill_in &quot;trip[return_date]&quot;, with: &quot;05/01/2017&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
           
           <code class="ruby">    fill_in &quot;trip[city]&quot;, with: &quot;Sedona,AZ&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="26">
+          
           
           <code class="ruby">    click_button &quot;Begin your adventure&quot;</code>
         </li>
@@ -4818,20 +4812,20 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="28">
+          
           
           <code class="ruby">    expect(page).to have_content(&quot;Departure date&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="29">
+          
           
           <code class="ruby">    expect(page).to have_content(&quot;Return date&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="30">
+          
           
           <code class="ruby">    expect(page).to have_content(&quot;Where would you like to go?&quot;)</code>
         </li>
@@ -5005,11 +4999,11 @@
         <div class="source_table" id="71bb04a66fb101a8c0e4a864c693ddf4c8e2245f">
   <div class="header">
     <h3>spec/features/trips/user_can_edit_trip_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">95.65 %</span> covered</h4>
     <div>
       <b>23</b> relevant lines. 
-      <span class="green"><b>23</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="green"><b>22</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -5226,8 +5220,8 @@
           <code class="ruby">    expect(page).to have_content(&quot;Sedona,AZ&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="36">
+          
           
           <code class="ruby">    expect(page).to_not have_content(&quot;#{@trip.city}&quot;)</code>
         </li>
