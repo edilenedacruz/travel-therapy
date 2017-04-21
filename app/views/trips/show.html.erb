@@ -2,18 +2,23 @@
     <div class="col s12">
       <h5 class="header center-align">Details for trip to <%=@trip.city %></h5>
     </div>
-    <div class="col s6">
-      <p>Departure date: <%= @trip.departure_date %></p>
-      <p>Return date: <%= @trip.return_date %></p>
-    </div>
-
-    <div class="col s12">
-      <h5 class="header center-align">Average cost of things in <%=@trip.city %></h5>
-    </div>
-
-    <% @prices.map do |item| %>
-    <%= item.name %>
-    <%= item.average_price %>
-    <hr>
-    <% end %>
+  <div class="prices col s12">
+    <ul class="collapsible" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header active"><i class="material-icons">date_range</i>Dates</div>
+        <div class="collapsible-body"><span>
+          <p>Departure date: <%= @trip.departure_date %></p>
+          <p>Return date: <%= @trip.return_date %></p>
+        </span></div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">attach_money</i>Average cost of  some "stuff" in <%=@trip.city %></div>
+          <div class="collapsible-body"><span>
+            <% @prices.map do |item| %>
+            <p><%= item.name %> - <%= number_to_currency(item.average_price, unit: "$USD ", separator: ",") %></p>
+            <% end %>
+          </span></div>
+      </li>
+    </ul>
+  </div>
 </div>
