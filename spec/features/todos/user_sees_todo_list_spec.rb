@@ -8,14 +8,14 @@ RSpec.feature "To do" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
   end
 
-  it "user sees option to add an activity" do
+  xit "user sees option to add an activity" do
 
     visit "/trips/#{@trip.id}"
 
     expect(page).to have_content("Activities")
   end
 
-  it "if actvity section is empty user can add an activity" do
+  xit "if actvity section is empty user can add an activity" do
 
     visit "/trips/#{@trip.id}"
 
@@ -27,7 +27,7 @@ RSpec.feature "To do" do
     expect(page).to have_button("Add activity")
   end
 
-  it "can create an activity" do
+  xit "can create an activity" do
     visit "/trips/#{@trip.id}"
 
     click_link "Add an activity"
@@ -40,7 +40,7 @@ RSpec.feature "To do" do
     expect(current_path).to eq(trip_path(@trip))
   end
 
-  it "can edit an activity" do
+  xit "can edit an activity" do
 
     visit "/trips/"
   end

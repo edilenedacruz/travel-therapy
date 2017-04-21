@@ -15,6 +15,6 @@ RSpec.feature "Guest can create account" do
 
     click_button "Create your account"
 
-    expect(current_path).to eq("/kanani")
+    expect(page).to have_content("Haukea's Dream Vacations Planning Center")
   end
 end

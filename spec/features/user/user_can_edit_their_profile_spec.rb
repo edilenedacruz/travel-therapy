@@ -9,11 +9,11 @@ RSpec.feature "User can edit their info" do
 
   it "can change all fields" do
 
-    visit "/#{@user.slug}"
+    visit "/users/#{@user.id}"
 
     click_link "Edit your profile"
 
-    expect(current_path).to eq("/#{@user.slug}/edit")
+    expect(current_path).to eq("/users/#{@user.id}/edit")
 
     fill_in "user[first_name]", with: "Jennifer"
     fill_in "user[last_name]", with: "Pahlka"

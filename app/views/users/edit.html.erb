@@ -3,7 +3,7 @@
     <div class="card-content">
       <span class="card-title black-text">Update Your Account</span>
       <div class="form">
-        <%= form_for @user, url: username_path do |f| %>
+        <%= form_for @user do |f| %>
           <%= f.label :first_name %>
           <%= f.text_field :first_name %>
           <%= f.label :last_name %>

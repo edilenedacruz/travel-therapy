@@ -9,7 +9,7 @@ RSpec.feature "Trip planner" do
 
   it "user sees options to plan trip" do
 
-    visit username_path(@user)
+    visit user_path(@user)
 
     click_link "Plan an adventure"
 
@@ -20,13 +20,12 @@ RSpec.feature "Trip planner" do
 
     visit new_trip_path
 
-    fill_in "trip[departure_date]", with: "05/01/2017"
-    fill_in "trip[return_date]", with: "05/01/2017"
-    fill_in "trip[city]", with: "Sedona,AZ"
-    click_button "Begin your adventure"
+    fill_in "Departure date", with: "05/01/2017"
+    fill_in "Return date", with: "05/01/2017"
+    fill_in "City", with: "Sedona,AZ"
+    click_button "Add new trip"
 
     expect(page).to have_content("Departure date")
     expect(page).to have_content("Return date")
-    expect(page).to have_content("Where would you like to go?")
   end
 end

@@ -10,14 +10,14 @@ RSpec.feature "trip update" do
 
   it "can sees button to edit trip at dashboard" do
 
-    visit "/#{@user.slug}"
+    visit "/users/#{@user.id}"
 
     within(".trips-table") do
       click_link "Edit"
     end
-    
+
     expect(current_path).to eq(edit_trip_path(@trip))
-    expect(page).to have_content("Changed your mind to where?")
+    expect(page).to have_button("Update trip")
     expect(page).to have_content("Departure date")
     expect(page).to have_content("Return date")
   end

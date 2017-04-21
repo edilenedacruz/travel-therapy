@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "Your account has been created."
-      redirect_to "/#{@user.slug}"
+      redirect_to user_path(@user)
     else
       flash[:error] = @user.errors.full_messages.to_sentence
       render :new
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     @user.update_attributes(user_params)
     if @user.save
       flash[:success] = "Your profile has been updated."
-      redirect_to username_path
+      redirect_to user_path(@user)
     else
       flash[:error] = @user.errors.full_messages.to_sentence
       render :edit

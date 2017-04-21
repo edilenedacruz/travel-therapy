@@ -10,10 +10,10 @@ RSpec.feature "delete trip" do
 
   it "can delete a trip" do
 
-    visit "/#{@user.slug}"
+    visit "/users/#{@user.id}"
 
     within(".trips-table") do
-      first(:link, "Delete").click 
+      first(:link, "Delete").click
     end
 
     expect(@user.trips.count).to eq(1)

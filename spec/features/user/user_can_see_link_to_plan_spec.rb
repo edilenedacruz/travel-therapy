@@ -10,7 +10,7 @@ RSpec.feature "User sees option to plan" do
 
   it "user sees link to plan a trip" do
 
-    visit username_path(user)
+    visit user_path(user)
 
     expect(page).to have_content("Plan an adventure")
   end
@@ -19,7 +19,7 @@ RSpec.feature "User sees option to plan" do
 
     visit new_trip_path
 
-    expect(page).to have_button("Begin your adventure")
+    expect(page).to have_button("Add new trip")
   end
 
   it "sees an option to select departure date" do
@@ -40,6 +40,6 @@ RSpec.feature "User sees option to plan" do
 
     visit new_trip_path
 
-    expect(page).to have_content("Where would you like to go?")
+    expect(page).to have_content("City")
   end
 end
