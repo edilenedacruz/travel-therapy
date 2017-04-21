@@ -26,13 +26,13 @@ RSpec.feature "trip update" do
 
     visit edit_trip_path(@trip)
 
-    fill_in "trip[city]", with: "Sedona,AZ"
+    fill_in "trip[city]", with: "NYC"
     fill_in "trip[departure_date]", with: "05/05/2017"
     fill_in "trip[return_date]", with: "06/15/2017"
 
     click_button "Update trip"
 
-    expect(page).to have_content("Sedona,AZ")
+    expect(page).to have_content("NYC")
     expect(page).to_not have_content("#{@trip.city}")
   end
 end

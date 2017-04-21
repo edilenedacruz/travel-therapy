@@ -6,4 +6,14 @@
       <p>Departure date: <%= @trip.departure_date %></p>
       <p>Return date: <%= @trip.return_date %></p>
     </div>
+
+    <div class="col s12">
+      <h5 class="header center-align">Average cost of things in <%=@trip.city %></h5>
+    </div>
+
+    <% @prices.map do |item| %>
+    <%= item.name %>
+    <%= item.average_price %>
+    <hr>
+    <% end %>
 </div>
