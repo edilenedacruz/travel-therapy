@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-
+  include ActionView::Helpers::NumberHelper
   def new
     @user = current_user
     @trip = Trip.new
