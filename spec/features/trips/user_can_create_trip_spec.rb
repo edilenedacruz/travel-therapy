@@ -22,7 +22,7 @@ RSpec.feature "Trip planner" do
 
     fill_in "Departure date", with: "05/01/2017"
     fill_in "Return date", with: "05/01/2017"
-    fill_in "City", with: "Sedona,AZ"
+    fill_in "City", with: "Durango"
     click_button "Add new trip"
 
     expect(page).to have_content("Departure date")

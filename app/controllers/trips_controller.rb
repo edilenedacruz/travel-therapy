@@ -19,7 +19,8 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
-    # @prices = Price.get_prices(@trip.city)
+    @city_id = NumbeoService.new.get_city_id(@trip.city)
+    @prices = Price.get_prices(@city_id)
   end
 
   def edit
