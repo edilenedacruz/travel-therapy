@@ -1,3 +1,4 @@
+<% unless current_user %>
 <div class="container">
   <div class="row">
       <%= form_for @trip do |f| %>
@@ -11,3 +12,6 @@
       <% end %>
   </div>
 </div>
+<% else %>
+<%= redirect_to login_path %>
+<% end %>
