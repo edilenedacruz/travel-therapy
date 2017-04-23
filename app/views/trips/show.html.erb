@@ -11,6 +11,18 @@
           <p>Return date: <%= @trip.return_date %></p>
         </span></div>
       </li>
+
+      <li>
+        <div class="collapsible-header"><i class="material-icons">local_activity</i>Planned activities</div>
+          <div class="collapsible-body" id="trip-link"><span>
+            <% @trip.todos.map do |todo| %>
+              <p><%= todo.title %></p>
+              <p>  <%= link_to "Edit", edit_trip_todo_path(@trip) %></p>
+              <p><%= link_to "Delete", trip_todo_path(@trip, todo), method: :delete %></p>
+            <% end %>
+            <%= link_to "Add an activity", new_trip_todo_path(@trip), class: "btn btn-color" %>
+          </span></div>
+      </li>
       <li>
         <div class="collapsible-header"><i class="material-icons">attach_money</i>Average cost of  some "stuff" in <%=@trip.city %></div>
           <div class="collapsible-body"><span>
