@@ -1,17 +1,21 @@
 require 'rails_helper'
 
-RSpec.feature "Prices" do
+RSpec.feature "Delete an activity" do
   before(:each) do
     @user = Fabricate(:user)
     @trip = @user.trips.create(city: "Durango", departure_date: "05/01/2017", return_date: "05/10/2017")
+    @todo = @trip.todos.create(title: "Have fun")
+
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
   end
-    describe "at a trip show page" do
-    it "user sees list of prices of items" do
 
-      visit "/trips/#{@trip.id}"
+  it "can delete an activity" do
 
-      expect(page).to have_content("Average cost of some \"stuff\" in Durango")
-    end
+    visit "/trips/#{@trip.id}"
+    expect(@trip.todos.count).to eq(1)
+
+    click_link("Delete")
+
+    expect(@trip.todos.count).to eq(0)
   end
 end

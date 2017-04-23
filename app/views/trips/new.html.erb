@@ -1,6 +1,6 @@
-<% unless current_user %>
 <div class="container">
   <div class="row">
+    <% if current_user %>
       <%= form_for @trip do |f| %>
         <%= f.label :departure_date, "Departure date" %>
         <%= f.text_field :departure_date, placeholder: "mm/dd/yyy" %>
@@ -10,8 +10,8 @@
         <%= f.text_field :city %>
         <%= f.submit "Add new trip", class: "btn btn-color", method: :create %>
       <% end %>
+      <% else %>
+      <%= red %>
+      <% end %>
   </div>
 </div>
-<% else %>
-<%= redirect_to login_path %>
-<% end %>
