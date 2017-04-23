@@ -27,7 +27,7 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     @todo.update(todo_params)
     if @todo.save
-      flash[:success] = "Your to do item has been updated."
+      flash[:success] = "Your activity has been updated."
       redirect_to trip_path(@trip)
     else
       flash[:error] = "You activity was not updated. Please try again."
