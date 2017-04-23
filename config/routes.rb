@@ -1,19 +1,16 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-    get '/auth/facebook/callback', to: 'sessions#create_facebook'
-    get '/auth/failure', to: redirect('/')
+  get '/auth/google_oauth2/callback', to: 'sessions#create_facebook'
+  # post '/login', to: 'sessions#create'
+  get '/auth/google_oauth2',          as: :login
 
-  get '/login', to: 'sessions#new', as: "login"
-  post '/login', to: 'sessions#create'
+  # get '/login', to: 'sessions#new', as: "login"
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
-  # get '/username', path: ':username',  to: 'users#show'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :users, only: [:show, :edit, :update]
-  # get '/username/edit', path: ':username/edit', to: 'users#edit'
-  # patch '/username/update', path: ':username', to: 'users#update'
+  resources :users
 
   resources :trips do
     resources :todos

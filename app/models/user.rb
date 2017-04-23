@@ -8,6 +8,7 @@ class User < ApplicationRecord
   private
 
   def self.from_omniauth(auth_hash)
+    binding.pry
     user = User.find_or_create_by(uid: auth_hash['uid'])
     user.first_name = auth_hash['info']['first_name']
     user.last_name = auth_hash['info']['last_name']

@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create_facebook
+    binding.pry
     user = User.from_omniauth(request.env["omniauth.auth"])
     session[:user_id] = user.id
     flash[:success] = "You are now logged in."
