@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: 'sessions#create_facebook'
   # post '/login', to: 'sessions#create'
   get '/auth/google_oauth2',          as: :login
-
+#
   # get '/login', to: 'sessions#new', as: "login"
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
