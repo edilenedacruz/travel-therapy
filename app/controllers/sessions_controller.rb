@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   def new
   end
 
-  def create_facebook
+  def create_google
     user = User.from_omniauth(request.env["omniauth.auth"])
     session[:user_id] = user.id
     flash[:success] = "You are now logged in."

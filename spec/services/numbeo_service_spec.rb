@@ -13,14 +13,14 @@ RSpec.describe NumbeoService do
     expect(populate.count).to eq(2921)
   end
 
-  xit "can get current prices in a city" do
+  it "can get current prices in a city" do
 
-    city = "Denver"
+    city = "3412"
 
     populate = @numbeo.get_current_prices(city)
 
-    expect(populate["name"]).to eq("Denver, CO, United States")
-    expect(populate["currency"]).to eq("USD")
-    expect(populate["prices"].class).to eq(Array)
+    expect(populate.first["item_name"]).to eq("Meal, Inexpensive Restaurant, Restaurants")
+    expect(populate.count).to eq(55)
+    expect(populate.class).to eq(Array)
   end
 end

@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-  get '/auth/google_oauth2/callback', to: 'sessions#create_facebook'
+  get '/auth/google_oauth2/callback', to: 'sessions#create_google'
   get '/auth/google_oauth2',          as: :login
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
-  get '/logout', to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
 
   resources :users
 
