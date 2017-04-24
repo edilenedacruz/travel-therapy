@@ -27,3 +27,8 @@ toastr.options = {
   "showMethod": "fadeIn",
   "hideMethod": "fadeOut"
 };
+
+
+// Get the <datalist> and <input> elements.
+var dataList = document.getElementById('json-datalist');
+var input = document.getElementById('ajax');
