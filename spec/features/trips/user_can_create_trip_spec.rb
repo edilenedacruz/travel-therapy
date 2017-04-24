@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature "Trip planner" do
   before(:each) do
     @user = Fabricate(:user)
+    @country = Country.create(city_id: "12357", country: "United States", city: "Durango, CO", latitude: "37.27528", longitude: "-107.8800667")
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
   end
@@ -22,8 +23,7 @@ RSpec.feature "Trip planner" do
 
     fill_in "Departure date", with: "05/01/2017"
     fill_in "Return date", with: "05/01/2017"
-    select "12357", from: 
-    select "3 Months", from: "time[month]"
+    select "Durango, CO", from: "trip[city]", visible: false
     click_button "Add new trip"
 
     expect(page).to have_content("Departure date")
