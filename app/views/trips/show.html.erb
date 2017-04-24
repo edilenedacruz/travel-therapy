@@ -1,6 +1,6 @@
 <div class="container">
     <div class="col s12">
-      <h5 class="header center-align">Details for trip to <%=@trip.city %></h5>
+      <h5 class="header center-align">Details for trip to <%= @trip.city_name %></h5>
     </div>
   <div class="prices col s12">
     <ul class="collapsible" data-collapsible="accordion">
@@ -22,7 +22,7 @@
           </span></div>
       </li>
       <li>
-        <div class="collapsible-header"><i class="material-icons">attach_money</i>Average cost of  some "stuff" in <%=@trip.city %></div>
+        <div class="collapsible-header"><i class="material-icons">attach_money</i>Average cost of  some "stuff" in <%=@trip.city_name %></div>
           <div class="collapsible-body"><span>
             <% @prices.map do |item| %>
             <p><%= item.name %> - <%= number_to_currency(item.average_price, unit: "$USD ", separator: ",") %></p>

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.from_omniauth(request.env["omniauth.auth"])
     session[:user_id] = user.id
     flash[:success] = "You are now logged in."
-    redirect_to "/#{user.slug}"
+    redirect_to user_path(user)
   end
 
   def create
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       flash[:success] = "You are now logged in."
-      redirect_to "/#{@user.slug}"
+      redirect_to user_path(user)
     else
       flash[:error] = @user.errors.full_messages.to_sentence
       render :new

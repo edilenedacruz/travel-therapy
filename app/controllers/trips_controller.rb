@@ -19,8 +19,9 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
-    @city_id = NumbeoService.new.get_city_id(@trip.city)
-    @prices = Price.get_prices(@city_id)
+    city_name = NumbeoService.new.get_city_name(@trip.city)
+    @trip.update_attributes(city_name: city_name)
+    @prices = Price.get_prices(@trip.city)
   end
 
   def edit
@@ -43,7 +44,7 @@ class TripsController < ApplicationController
     @user = current_user
     @trip = Trip.find(params[:id])
     @trip.destroy
-    redirect_to "/#{@user.slug}"
+    redirect_to user_path(@user)
   end
 
   private

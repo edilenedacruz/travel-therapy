@@ -14,8 +14,8 @@ class NumbeoService
     parse(connection.get("city_prices?api_key=#{@key}&city_id=#{city_id}"))["prices"]
   end
 
-  def get_city_id(city)
-    parse(connection.get("city_prices?api_key=#{@key}&query=#{city}"))["city_id"].to_s
+  def get_city_name(city_id)
+    parse(connection.get("city_prices?api_key=#{@key}&city_id=#{city_id}"))["name"]
   end
 
   private
