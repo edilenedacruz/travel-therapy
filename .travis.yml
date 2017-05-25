@@ -4,6 +4,6 @@ rvm:
 services:
   - postgresql
 before_script:
-  rake db:setup
+  bundle exec rake db:create db:migrate db:seed
 
 script: bundle exec rspec spec
