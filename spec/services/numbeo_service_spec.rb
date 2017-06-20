@@ -10,7 +10,7 @@ RSpec.describe NumbeoService do
 
     populate = @numbeo.get_all_cities_info
 
-    expect(populate.count).to eq(2921)
+    expect(populate.count).to eq(2966)
   end
 
   it "can get current prices in a city" do
