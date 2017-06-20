@@ -1,9 +1,0 @@
-language: ruby
-rvm:
-  2.3.1
-services:
-  - postgresql
-before_script:
-- psql -c 'create database travel-therapy_test;' -U postgres
-
-script: bundle exec rspec spec
