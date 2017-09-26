@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require materialize-sprockets
 //= require materialize
+//= require materialize-sprockets
 //= require jquery_ujs
 //= require toastr_rails
 //= require_tree .
