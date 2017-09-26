@@ -34,6 +34,7 @@ gem 'faraday'
 gem 'faker'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'materialize-sass'
+gem 'material_icons'
 gem "omniauth-google-oauth2"
 gem 'simplecov', :require => false, :group => :test
 
