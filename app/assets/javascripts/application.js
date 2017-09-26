@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require material_icons
 //= require jquery
 //= require materialize-sprockets
 //= require materialize
