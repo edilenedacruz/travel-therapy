@@ -1,26 +1,24 @@
-Travel Therapy is a travel planning app where you can choose a city you would like to visit and then create a to do list. It also has a section that displays prices of basic items in the city, like gas, milk, restaurant meals etc.
+# README
 
-This project makes uses of :
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-* an external provider to authenticate users
-* Consumption of an external API
-* Creating of an internal API
+Things you may want to cover:
 
-Visit this page in the near future to checkout new enhancements.
+* Ruby version
 
-## Setup
-1. `git clone https://github.com/edilenedacruz/travel-therapy.git`
+* System dependencies
 
-2. `bundle install`
+* Configuration
 
-3. `rake db:setup`
+* Database creation
 
-4. Please note that you will need an api key for the following services: Numbeo and Google.
+* Database initialization
 
-## localhost
-`rails s`
+* How to run the test suite
 
-`http://localhost:3000`
+* Services (job queues, cache servers, search engines, etc.)
 
-## Production
-`http://traveltherapy.herokuapp.com/`
+* Deployment instructions
+
+* ...
